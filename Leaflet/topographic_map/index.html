@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topographic Map Display</title>
+
+    <!-- Include Leaflet CSS file in the head section of your document -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+     <!-- Include Leaflet JavaScript file- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <style>
+
+        /* the map container has a defined height */
+        #map { height: 800px; }
+
+    </style>
+
+</head>
+<body>
+
+    <title>Topographic Map Display</title>
+
+    <!-- Put a div element with a certain id where you want your map to be -->
+    <div id="map"></div>
+
+
+
+</body>
+<script>
+
+    // Setting up the map
+    var map = L.map('map');
+    map.setView([50.93333, 6.95], 12);
+
+    // getting your map data from openstreetmap
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+
+</script>
+</html>
